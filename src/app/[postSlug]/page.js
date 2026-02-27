@@ -6,6 +6,7 @@ import styles from "./postSlug.module.css";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { BLOG_TITLE } from "@/constants";
 import CodeSnippet from "@/components/CodeSnippet";
+import DivisionGroupsDemo from "@/components/DivisionGroupsDemo";
 
 export const generateMetadata = React.cache(async function generateMetadata({
   params,
@@ -31,7 +32,10 @@ async function BlogPost({ params }) {
         publishedOn={frontmatter.publishedOn}
       />
       <div className={styles.page}>
-        <MDXRemote source={content} components={{ pre: CodeSnippet }} />
+        <MDXRemote
+          source={content}
+          components={{ pre: CodeSnippet, DivisionGroupsDemo }}
+        />
       </div>
     </article>
   );
