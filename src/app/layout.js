@@ -27,20 +27,20 @@ function RootLayout({ children }) {
   const theme = "light";
 
   return (
-    <html
-      lang="en"
-      className={clsx(mainFont.variable, monoFont.variable)}
-      data-color-theme={theme}
-      style={theme === "light" ? LIGHT_TOKENS : DARK_TOKENS}
-    >
-      <RespectMotionPreferences>
+    <RespectMotionPreferences>
+      <html
+        lang="en"
+        className={clsx(mainFont.variable, monoFont.variable)}
+        data-color-theme={theme}
+        style={theme === "light" ? LIGHT_TOKENS : DARK_TOKENS}
+      >
         <body>
           <Header theme={theme} />
           <main>{children}</main>
           <Footer />
         </body>
-      </RespectMotionPreferences>
-    </html>
+      </html>
+    </RespectMotionPreferences>
   );
 }
 
